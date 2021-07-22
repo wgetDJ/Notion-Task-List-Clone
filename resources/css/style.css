@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 220px auto;
+    min-height: 100vh;
+    min-width: 10vw;
+}
+
+.menu {
+    background-color: #f7f7f7;
+    padding: 30px 20px;
+}
+.menu h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.menu ul {
+    list-style: none;
+    padding-left: 0;
+}
+.menu ul li {
+    cursor: pointer;
+}
+/* TODO: active class doesn't work */
+.menu ul li .active {
+    background-color: #eeeeee;
+    border-radius: 5px;
+}
+.menu #today-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
