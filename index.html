@@ -20,11 +20,61 @@
                 <h1>TO-DO</h1>
 
                 <ul>
-                    <li class="active"><span id="today-icon">⭐</span>Today's</li>
+                    <li class="today"><span id="today-icon">⭐</span>Today's</li>
+                    <li class="calender"><span id="today-icon">⭐</span>Calendar</li>
                 </ul>
             </div>
 
-            <div class="content">b</div>
+            <div class="content">
+
+                <h1 class="content-name"><span id="today-icon">⭐</span>Today's</h1>
+                
+                <div class="todo-data">
+
+                    <div class="todo">
+
+                        <h2><span>To Do</span></h2>
+
+                        <ul class="lists">
+
+                            <li class="item">
+                                <span class="doing"></span>
+                                <span class="itemData">JavaScript</span>
+                            </li>
+
+                        </ul>
+
+                        <button class="new-task"><span id="add">+</span>New</button>
+
+                        <form class="inputItem">
+                            <input type="text" id="task" placeholder="Enter your task">
+                            <select class="tags">
+                                <option id="color0" value="0">Select tag</option>
+                                <option id="color1" value="1">Seashell</option>
+                                <option id="color2" value="2">Menthol</option>
+                                <option id="color3" value="3">Bisque</option>
+                                <option id="color4" value="4">Pink Lavender</option>
+                                <option id="color5" value="5">Pale Blue</option>
+                            </select>
+                            <button class="addItem">Add</button>
+                        </form>
+
+                    </div>
+
+                    <div class="doing">
+
+                        <h2><span>Doing</span></h2>
+
+                    </div>
+
+                    <div class="done">
+
+                        <h2><span>Done</span></h2>
+
+                    </div>
+
+                </div>
+            </div>
         </div>
     </body>
 </html>

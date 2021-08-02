@@ -1,7 +1,26 @@
+:root {
+    --pale-blue: #B5F2F3;
+    --seashell: #FCF6EC;
+    --menthol: #C7E4A7;
+    --bisque: #FFEAC5;
+    --pink-lavender: #DFB8C0;
+    --red: #FE1416;
+    --blue: #25AEE4;
+    --green: #53DD3B;
+    --gray: #6c757d;
+    --gray-dark: #000102;
+    --light: #f7f7f7;
+    --white: #ffffff;
+
+    --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: var(--white);
     font-size: 16px;
     font-family: 'Rubik', sans-serif;
 }
@@ -13,8 +32,10 @@ body {
     min-width: 10vw;
 }
 
+
+/* ---menu--- */
 .menu {
-    background-color: #f7f7f7;
+    background-color:  var(--light);
     padding: 30px 20px;
 }
 .menu h1 {
@@ -30,10 +51,100 @@ body {
 }
 /* TODO: active class doesn't work */
 .menu ul li .active {
-    background-color: #eeeeee;
+    background-color: var(--gray);
     border-radius: 5px;
 }
 .menu #today-icon {
     font-size: 1.2rem;
     margin-right: 10px;
+}
+
+.content {
+    padding: 40px 60px;
+}
+.content h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.content h1 #today-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.content .todo-data {
+    display: grid;
+    grid-template-columns: 220px 220px 220px;
+    grid-gap: 2rem;
+}
+
+
+/* ---todo--- */
+.content .todo-data h2 {
+    font-size: .8rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 30px;
+}
+.content .todo-data h2 span {
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+.content .todo-data .todo h2 span {
+    background-color: var(--red);
+}
+.content .todo-data .doing h2 span {
+    background-color: var(--blue);
+}
+.content .todo-data .done h2 span {
+    background-color: var(--green);
+}
+
+
+/* ---new task--- */
+.content .new-task {
+    border: none;
+    background-color: var(--white);
+    font-size: .9rem;
+    color: var(--gray);
+    padding: 0;
+    cursor: pointer;
+}
+.content .new-task:hover {
+    color: var(--gray-dark);
+}
+.content .new-task #add {
+    margin-right: 8px;
+}
+
+/* ---form--- */
+.inputItem {
+    margin-top: 1rem;
+    padding: 1rem 1rem 1.7rem 1rem;
+    border-radius: 5px;
+    background-color: var(--light);
+}
+.inputItem #task {
+    background-color: var(--white);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(100% - 1.2rem);
+    margin-bottom: 1rem;
+}
+.inputItem .tags {
+    padding: .4rem 0;
+    width: 63%;
+    border: none;
+    border-radius: 5px;
+}
+.inputItem .tags .option {
+    background-color: var(--gray-dark);
+}
+.inputItem .addItem {
+    float: right;
+    background-color: var(--gray-dark);
+    color: var(--white);
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 5px;
 }
