@@ -6,11 +6,10 @@
 
         <title>TO-DO with vanilla JavaScript</title>
         <link rel="stylesheet" type="text/css" charset="utf-8" href="./resources/css/style.css">
-        <script type="text/javascript" src="./resources/js/script.js"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -21,7 +20,7 @@
 
                 <ul>
                     <li class="today"><span id="today-icon">⭐</span>Today's</li>
-                    <li class="calender"><span id="today-icon">⭐</span>Calendar</li>
+                    <!-- <li class="calender"><span id="today-icon">⭐</span>Calendar</li> -->
                 </ul>
             </div>
 
@@ -35,28 +34,20 @@
 
                         <h2><span>To Do</span></h2>
 
-                        <ul class="lists">
+                        <ul class="lists todo-list">
 
-                            <li class="item">
-                                <span class="doing"></span>
-                                <span class="itemData">JavaScript</span>
-                            </li>
+                            <!-- <li class="item">JavaScript something tadadhins</li>
+                            <li class="item">JavaScript something tadadhins</li> -->
 
                         </ul>
 
                         <button class="new-task"><span id="add">+</span>New</button>
 
                         <form class="inputItem">
+
                             <input type="text" id="task" placeholder="Enter your task">
-                            <select class="tags">
-                                <option id="color0" value="0">Select tag</option>
-                                <option id="color1" value="1">Seashell</option>
-                                <option id="color2" value="2">Menthol</option>
-                                <option id="color3" value="3">Bisque</option>
-                                <option id="color4" value="4">Pink Lavender</option>
-                                <option id="color5" value="5">Pale Blue</option>
-                            </select>
-                            <button class="addItem">Add</button>
+                            <button class="addItem" type="button">Add</button>
+
                         </form>
 
                     </div>
@@ -65,16 +56,32 @@
 
                         <h2><span>Doing</span></h2>
 
+                        <ul class="lists doing-list">
+
+                            
+
+                        </ul>
+
                     </div>
 
                     <div class="done">
 
                         <h2><span>Done</span></h2>
 
+                        <ul class="lists done-list">
+
+                            
+
+                        </ul>
+
                     </div>
 
                 </div>
+
             </div>
+            
         </div>
+
+        <script type="text/javascript" src="./resources/js/script.js"></script>
     </body>
 </html>

@@ -4,25 +4,21 @@
     --menthol: #C7E4A7;
     --bisque: #FFEAC5;
     --pink-lavender: #DFB8C0;
-    --red: #FE1416;
-    --blue: #25AEE4;
-    --green: #53DD3B;
-    --gray: #6c757d;
-    --gray-dark: #000102;
+    --red: #ff736980;
+    --yellow: #ffdc4980;
+    --green: #4dab9a80;
+    --gray: #373c3f;
+    --gray-dark: #2f3437;
     --light: #f7f7f7;
     --white: #ffffff;
-
-    --select-border: #777;
-    --select-focus: blue;
-    --select-arrow: var(--select-border);
+    font-size: 16px;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--white);
-    font-size: 16px;
-    font-family: 'Rubik', sans-serif;
+    background-color: var(--gray-dark);
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -35,11 +31,12 @@ body {
 
 /* ---menu--- */
 .menu {
-    background-color:  var(--light);
+    background-color:  var(--gray);
+    color: var(--light);
     padding: 30px 20px;
 }
 .menu h1 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 .menu ul {
@@ -48,6 +45,7 @@ body {
 }
 .menu ul li {
     cursor: pointer;
+    font-size: .9rem;
 }
 /* TODO: active class doesn't work */
 .menu ul li .active {
@@ -60,21 +58,22 @@ body {
 }
 
 .content {
-    padding: 40px 60px;
+    padding: 40px 80px;
+    color: var(--light);
 }
 .content h1 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 .content h1 #today-icon {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-right: 10px;
 }
 
 .content .todo-data {
     display: grid;
-    grid-template-columns: 220px 220px 220px;
-    grid-gap: 2rem;
+    grid-template-columns: 270px 270px 270px;
+    grid-gap: 1rem;
 }
 
 
@@ -83,34 +82,54 @@ body {
     font-size: .8rem;
     font-weight: 400;
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 1.2rem;
 }
 .content .todo-data h2 span {
-    padding: 3px 5px;
-    border-radius: 5px;
+    padding: 2px 5px;
+    border-radius: 2px;
+    letter-spacing: .1rem;
 }
 .content .todo-data .todo h2 span {
     background-color: var(--red);
 }
 .content .todo-data .doing h2 span {
-    background-color: var(--blue);
+    background-color: var(--yellow);
 }
 .content .todo-data .done h2 span {
     background-color: var(--green);
 }
 
 
+/* ---lists--- */
+.lists {
+    padding: 0;
+    list-style: none;
+}
+.lists li {
+    background-color: var(--gray);
+    padding: .9rem .8rem;
+    font-size: .9rem;
+    border-radius: 5px;
+    color: var(--light);
+    font-weight: 300;
+    cursor: pointer;
+    margin-bottom: .5rem;
+    box-shadow: rgb(15 15 15 / 20%) 0px 0px 0px 1px, rgb(15 15 15 / 20%) 0px 2px 4px;
+}
+
+
 /* ---new task--- */
 .content .new-task {
     border: none;
-    background-color: var(--white);
+    background-color: var(--gray-dark);
     font-size: .9rem;
-    color: var(--gray);
+    color: var(--light);
+    opacity: 50%;
     padding: 0;
     cursor: pointer;
 }
 .content .new-task:hover {
-    color: var(--gray-dark);
+    opacity: 70%;
 }
 .content .new-task #add {
     margin-right: 8px;
@@ -119,32 +138,44 @@ body {
 /* ---form--- */
 .inputItem {
     margin-top: 1rem;
-    padding: 1rem 1rem 1.7rem 1rem;
+    padding: 1rem;
     border-radius: 5px;
-    background-color: var(--light);
+    background-color: var(--gray);
+    box-shadow: rgb(15 15 15 / 20%) 0px 0px 0px 1px, rgb(15 15 15 / 20%) 0px 2px 4px;
+    display: none;
 }
 .inputItem #task {
-    background-color: var(--white);
+    background-color: var(--gray-dark);
     border: none;
     padding: 10px;
     border-radius: 5px;
     width: calc(100% - 1.2rem);
     margin-bottom: 1rem;
+    color: var(--light);
+}
+.inputItem #task:focus {
+    outline: none;
 }
 .inputItem .tags {
     padding: .4rem 0;
     width: 63%;
     border: none;
     border-radius: 5px;
+    background-color: var(--gray-dark);
+    color: var(--light);
+    cursor: pointer;
 }
 .inputItem .tags .option {
     background-color: var(--gray-dark);
+    cursor: pointer;
 }
+
+/* ---add botton--- */
 .inputItem .addItem {
-    float: right;
     background-color: var(--gray-dark);
     color: var(--white);
     border: none;
     padding: .5rem 1rem;
     border-radius: 5px;
+    cursor: pointer;
 }
