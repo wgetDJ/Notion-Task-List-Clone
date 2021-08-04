@@ -26,6 +26,11 @@ const displyTask = (whereToDisply, textValue) => {
     li.classList.add("item");
     const listText = document.createTextNode(textValue);
     li.appendChild(listText);
+    const span = document.createElement("span");
+    span.classList.add("closebtn");
+    const closeX = document.createTextNode("\u00D7");
+    span.appendChild(closeX);
+    li.appendChild(span);
 
     ul.appendChild(li);
 }
@@ -53,4 +58,16 @@ newTaskBtn.addEventListener("click", function(){
 addBtn.addEventListener("click", function() {
     getTask();
     hideForm();
+})
+
+
+// ---alert---
+const alertNote = document.querySelector(".alert");
+const alertCloseBtn = document.querySelector(".alertclosebtn");
+
+alertCloseBtn.addEventListener("click", function() {
+    alertNote.classList.toggle("scaleout");
+    setTimeout(function() {
+        alertNote.style.display = "none";
+    }, 300);
 })

@@ -36,14 +36,13 @@
 
                         <ul class="lists todo-list">
 
-                            <!-- <li class="item">JavaScript something tadadhins</li>
-                            <li class="item">JavaScript something tadadhins</li> -->
+                            <!-- <li class="item">JavaScript something tadadhins <span class="closebtn">&#215;</span></li> -->
 
                         </ul>
 
                         <button class="new-task"><span id="add">+</span>New</button>
 
-                        <form class="inputItem">
+                        <form class="inputItem" autocomplete="off">
 
                             <input type="text" id="task" placeholder="Enter your task">
                             <button class="addItem" type="button">Add</button>
@@ -80,6 +79,11 @@
 
             </div>
             
+        </div>
+
+        <div class="alert">
+            <span class="alertclosebtn">&times;</span>  
+            <strong>Note : </strong> Drag and drop between <i>todo</i>, <i>doing</i> & <i>done</i>.
         </div>
 
         <script type="text/javascript" src="./resources/js/script.js"></script>
