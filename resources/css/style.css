@@ -194,7 +194,7 @@ body {
     background: var(--green);
     color: var(--white);
     opacity: .6;
-    transition: opacity 0.3s;
+    transition: opacity 0.2s;
     font-size: 1rem;
     line-height: 1rem;
     position:absolute;
@@ -202,51 +202,60 @@ body {
     left: .5rem;
     width: inherit;
     border-radius: 8px;
-    animation: scaleup 0.3s;
+    animation: scaleup 0.2s;
 }
 .scaleout {
-    animation: scalein 0.3s;
+    animation: scalein 0.2s;
 }
 .alertclosebtn {
     margin-left: 15px;
     color: var(--light);
     font-weight: bold;
     float: right;
-    font-size: 22px;
-    line-height: 20px;
+    font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
 }
 @keyframes scaleup {
     0% {
       transform: scale(0);
+      bottom: 0rem;
     }
     10% {
         transform: scale(0.1);
+        bottom: 0.05rem;
     }
     20% {
         transform: scale(0.2);
+        bottom: 0.1rem;
     }
     30% {
         transform: scale(0.3);
+        bottom: 0.15rem;
     }
     40% {
         transform: scale(0.4);
+        bottom: 0.2rem;
     }
     50% {
         transform: scale(0.5);
+        bottom: 0.25rem;
     }
     60% {
         transform: scale(0.6);
+        bottom: 0.3rem;
     }
     70% {
         transform: scale(0.7);
+        bottom: 0.35rem;
     }
     80% {
         transform: scale(0.8);
+        bottom: 0.4rem;
     }
     90% {
         transform: scale(0.9);
+        bottom: 0.45rem;
     }
     100% {
         transform: scale(1);
@@ -258,32 +267,42 @@ body {
     }
     10% {
         transform: scale(0.9);
+        bottom: 0.45rem;
     }
     20% {
         transform: scale(0.8);
+        bottom: 0.4rem;
     }
     30% {
         transform: scale(0.7);
+        bottom: 0.35rem;
     }
     40% {
         transform: scale(0.6);
+        bottom: 0.3rem;
     }
     50% {
         transform: scale(0.5);
+        bottom: 0.25rem;
     }
     60% {
         transform: scale(0.4);
+        bottom: 0.2rem;
     }
     70% {
         transform: scale(0.3);
+        bottom: 0.15rem;
     }
     80% {
         transform: scale(0.2);
+        bottom: 0.1rem;
     }
     90% {
         transform: scale(0.1);
+        bottom: 0.05rem;
     }
     100% {
         transform: scale(0);
+        bottom: 0rem;
     }
 }
