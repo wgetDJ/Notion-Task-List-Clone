@@ -34,6 +34,8 @@ const displyTask = (whereToDisply, textValue) => {
         }
     }
 
+    li.draggable ="true";
+
     const listText = document.createTextNode(textValue);
     li.appendChild(listText);
 
@@ -46,21 +48,6 @@ const displyTask = (whereToDisply, textValue) => {
     li.appendChild(span);
 
     ul.appendChild(li);
-}
-
-const removeTask = (fromWhereToRemove, textValue) => {
-    for (let index in allTaskList) {
-        if (allTaskList[index] == whereToDisply) {
-            const currentType = listType[index];
-            currentList = document.querySelectorAll(currentType);
-            for (let list of currentList) {
-                console.log(list);
-                list.addEventListener("click", function(){
-                    list.style.display = "none";
-                });
-            }
-        }
-    }
 }
 
 const addTaskToTaskList = (list, value) => {
@@ -84,15 +71,29 @@ const getTask = () => {
     addTaskToTaskList(todoTask, newTaskText);
 }
 
-newTaskBtn.addEventListener("click", function(){
+newTaskBtn.addEventListener("click", () => {
     showForm();
 });
 
-addBtn.addEventListener("click", function() {
+addBtn.addEventListener("click", () => {
     getTask();
     clearForm();
     hideForm();
 });
+
+newTask.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        getTask();
+        clearForm();
+        hideForm();
+    }
+});
+
+// ---drag and drop---
+let lists = document.querySelectorAll(".item").async;
+// console.log(lists);
+
 
 
 
@@ -100,7 +101,7 @@ addBtn.addEventListener("click", function() {
 const alertNote = document.querySelector(".alert");
 const alertCloseBtn = document.querySelector(".alertclosebtn");
 
-alertCloseBtn.addEventListener("click", function() {
+alertCloseBtn.addEventListener("click", () => {
     alertNote.classList.toggle("scaleout");
     setTimeout(function() {
         alertNote.style.display = "none";
