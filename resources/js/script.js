@@ -5,10 +5,12 @@ const done = document.querySelector(".todo");
 const newTask = document.querySelector("#task");
 const addBtn = document.querySelector(".addItem");
 const inputForm = document.querySelector(".inputItem");
+const allLists = document.querySelectorAll(".lists");
 let todoLists = document.querySelector(".todo-list");
 let doingLists = document.querySelector(".doing-list");
 let doneLists = document.querySelector(".done-list");
-// const deleteBtn = document.querySelector(".closebtn");
+const alertNote = document.querySelector(".alert");
+const alertCloseBtn = document.querySelector(".alertclosebtn");
 
 let todoTask = [];
 let doingTask = [];
@@ -25,6 +27,10 @@ const hideForm = () => {
     inputForm.style.display = "none";
 }
 
+const clearForm = () => {
+    newTask.value = "";
+}
+
 const displyTask = (whereToDisply, textValue) => {
 
     const ul = document.querySelector(whereToDisply);
@@ -34,6 +40,7 @@ const displyTask = (whereToDisply, textValue) => {
         if (allTaskList[index] == whereToDisply) {
             const currentType = listType[index];
             li.classList.add("item", currentType);
+            li.setAttribute("id", "listdata");
         }
     }
 
@@ -65,12 +72,6 @@ const addTaskToTaskList = (list, value) => {
     }
 }
 
-
-
-const clearForm = () => {
-    newTask.value = "";
-}
-
 const getTask = () => {
     let newTaskText = newTask.value;
     addTaskToTaskList(todoTask, newTaskText);
@@ -82,14 +83,41 @@ const deleteTask = (e) => {
     }
 }
 
+const dragTask = (e) => {
+    const item = e.target;
+    e.dataTransfer.setData("/textplain", item.id);
+    for (const dropZone of allLists) {
+
+        dropZone.addEventListener("dragover", e => {
+            e.preventDefault();
+            console.log("decode");
+        });
+
+        dropZone.addEventListener("drop", e => {
+            e.preventDefault();
+            const droppedElementId = e.dataTransfer.getData("/textplain");
+            console.log(droppedElementId);
+            const droppedElement = document.getElementById(droppedElementId);
+
+            dropZone.appendChild(droppedElement);
+        });
+    }
+};
+
 newTaskBtn.addEventListener("click", () => {
     showForm();
 });
 
 addBtn.addEventListener("click", () => {
-    getTask();
-    clearForm();
-    hideForm();
+    let inputValue = newTask.value;
+    console.log(inputValue);
+    if (inputValue === "") {
+        alert("Please enter a task!");
+    } else {
+        getTask();
+        clearForm();
+        hideForm();
+    }
 });
 
 newTask.addEventListener("keypress", (event) => {
@@ -101,25 +129,18 @@ newTask.addEventListener("keypress", (event) => {
     }
 });
 
+
+// ---deleteing tasks---
 todoLists.addEventListener("click", deleteTask);
 doingLists.addEventListener("click", deleteTask);
 doneLists.addEventListener("click", deleteTask);
 
-// ---delete task---
-// lists.addEventListener("click", (e) => {
-//     console.log(e.target);
-//     const item = e.target;
-//     if (item.classList[0] === "closebtn") {
-//         item.parentElement.remove();
-//     }
-// })
+// ---drag and drop---
+todoLists.addEventListener("dragstart", dragTask);
+doingLists.addEventListener("dragstart", dragTask);
+doneLists.addEventListener("dragstart", dragTask);
 
-
-
-// ---alert---
-const alertNote = document.querySelector(".alert");
-const alertCloseBtn = document.querySelector(".alertclosebtn");
-
+// ---alert close---
 alertCloseBtn.addEventListener("click", () => {
     alertNote.classList.toggle("scaleout");
     setTimeout(function() {

@@ -76,6 +76,17 @@ body {
     grid-gap: 1rem;
 }
 
+.content .todo-data .doing ul,
+.content .todo-data .done ul {
+    min-height: 200px;
+    min-width: 270px;
+}
+
+.content .todo-data .todo ul {
+    min-height: 1rem;
+    min-width: 270px;
+}
+
 
 /* ---todo--- */
 .content .todo-data h2 {
