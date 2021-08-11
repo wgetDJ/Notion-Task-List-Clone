@@ -5,6 +5,9 @@ const done = document.querySelector(".todo");
 const newTask = document.querySelector("#task");
 const addBtn = document.querySelector(".addItem");
 const inputForm = document.querySelector(".inputItem");
+let todoLists = document.querySelector(".todo-list");
+let doingLists = document.querySelector(".doing-list");
+let doneLists = document.querySelector(".done-list");
 // const deleteBtn = document.querySelector(".closebtn");
 
 let todoTask = [];
@@ -62,6 +65,8 @@ const addTaskToTaskList = (list, value) => {
     }
 }
 
+
+
 const clearForm = () => {
     newTask.value = "";
 }
@@ -69,6 +74,12 @@ const clearForm = () => {
 const getTask = () => {
     let newTaskText = newTask.value;
     addTaskToTaskList(todoTask, newTaskText);
+}
+const deleteTask = (e) => {
+    const item = e.target;
+    if (item.classList[0] === "closebtn") {
+        item.parentElement.remove();
+    }
 }
 
 newTaskBtn.addEventListener("click", () => {
@@ -90,10 +101,18 @@ newTask.addEventListener("keypress", (event) => {
     }
 });
 
-// ---drag and drop---
-let lists = document.querySelectorAll(".item").async;
-// console.log(lists);
+todoLists.addEventListener("click", deleteTask);
+doingLists.addEventListener("click", deleteTask);
+doneLists.addEventListener("click", deleteTask);
 
+// ---delete task---
+// lists.addEventListener("click", (e) => {
+//     console.log(e.target);
+//     const item = e.target;
+//     if (item.classList[0] === "closebtn") {
+//         item.parentElement.remove();
+//     }
+// })
 
 
 
